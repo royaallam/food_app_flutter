@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:food_aap/auto/login_screen.dart';
+import 'package:food_aap/auto/sing_up_screen.dart';
+import 'package:food_aap/auto/verification_screen%20.dart';
 
 import 'package:food_aap/splash_screen.dart';
 

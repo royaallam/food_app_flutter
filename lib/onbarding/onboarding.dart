@@ -19,7 +19,9 @@ class _OnboardingState extends State<Onboarding> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: SafeArea(child: Column(
+      body: SafeArea(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
       children: [
         Expanded(
           child: PageView(
@@ -55,14 +57,14 @@ class _OnboardingState extends State<Onboarding> {
               borderRadius: BorderRadius.circular(20)
               ,
             ),
-            child: Center(child: Text(index==2?"Register":"Skip"))),
+            child: Center(child: Text(index==2?"":"Skip"))),
            
            ),
            InkWell(
             onTap: () {
               if(index==2){
                 Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context)=>LoginScreen())
+                  MaterialPageRoute(builder: (context)=>LoginPage())
                
   
                 
@@ -76,7 +78,7 @@ class _OnboardingState extends State<Onboarding> {
             },
             child:Container(
               height: 50,
-            width: 200,
+            width: 300,
             decoration: BoxDecoration(
               color: Colors.orange,
               borderRadius: BorderRadius.circular(20)
@@ -84,8 +86,8 @@ class _OnboardingState extends State<Onboarding> {
             ),
               child: Center(
                 child: Text(
-                        index==2?"login":
-                        "Next"),
+                        index==2?"GET STARTED":
+                        "Next",style: TextStyle(color: Colors.white),),
               ),
             ) ,
            )
@@ -107,8 +109,8 @@ class CustomIndicator extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedContainer(duration: Duration(milliseconds: 250),
     decoration: BoxDecoration(
-      borderRadius: BorderRadius.circular(100),
-      color: active?Colors.grey:Colors.amber,
+      borderRadius: BorderRadius.circular(20),
+      color: active?Colors.amber:Colors.deepOrangeAccent,
     ),
     width:active?30:10 ,
     height: 10,

@@ -17,7 +17,7 @@ Image.asset("images/2_dev.png",height: 250,width: 500,
 ),
 SizedBox(height: 10,),
 Text("Free delivery offers",style: TextStyle(
-  color: Colors.amber,
+  color: Colors.deepOrange,
   fontSize: 14
 
 ),),

@@ -96,7 +96,7 @@ class _SplashScreenState extends State<SplashScreen>
               Image.asset(
                 'images/fan_blades.jpeg',
                 width: 350, // حجم كبير للمروحة لتغطية مساحة خلفية
-                height: 350,
+                height: 200,
                 
               ),
               

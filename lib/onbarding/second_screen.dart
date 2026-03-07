@@ -13,17 +13,19 @@ class _SecondScreenState extends State<SecondScreen> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-Image.asset("images/3_chef.png"),
+Image.asset("images/3_chef.png",height: 250,width: 500,),
+SizedBox(height: 20,),
 Text("Order from chef",style: TextStyle(
-  color: Colors.amber,
-  fontSize: 14
+  color: Colors.deepOrange,
+  fontSize: 20
 
 ),),
+SizedBox(height: 20,),
 Text("Get all your loved foods in one once place,\n you just place the orer do the rest",textAlign: TextAlign.center
 ,style: TextStyle(
   
-  color: Colors.amber,
-  fontSize: 20,
+  color: Colors.deepOrange,
+  fontSize: 18,
   fontWeight: FontWeight.bold
 ),),
       ],
