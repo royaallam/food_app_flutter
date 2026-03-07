@@ -17,6 +17,7 @@ class _OnboardingState extends State<Onboarding> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SafeArea(child: Column(
       children: [
         Expanded(
@@ -43,17 +44,43 @@ class _OnboardingState extends State<Onboarding> {
             SizedBox(width: 5,),
             CustomIndicator(active: index==2),
         ],),
-        ElevatedButton(onPressed: (){
-          
-        }, child: Text(index==2?"Register":"skip")),
-      ElevatedButton(onPressed: (){
-        _controller.animateToPage(index+1, duration: Duration(
+        InkWell(
+           child: Container(
+            height: 50,
+            width: 200,
+            decoration: BoxDecoration(
+              
+              borderRadius: BorderRadius.circular(20)
+              ,
+            ),
+            child: Center(child: Text(index==2?"Register":"Skip"))),
+           
+           ),
+           InkWell(
+            onTap: () {
+             _controller.animateToPage(index+1, duration: Duration(
             milliseconds: 250
-          ), curve: Curves.linear);
-      }, child: Text(
-        index==2?"login":
-        "next")
-        )
+          ), curve: Curves.linear); 
+            },
+            child:Container(
+              height: 50,
+            width: 200,
+            decoration: BoxDecoration(
+              color: Colors.orange,
+              borderRadius: BorderRadius.circular(20)
+              ,
+            ),
+              child: Center(
+                child: Text(
+                        index==2?"login":
+                        "Next"),
+              ),
+            ) ,
+           )
+
+
+
+      
       ],
     )),
     );

@@ -13,7 +13,8 @@ class _ThirdScreenState extends State<ThirdScreen> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-Image.asset("images/4_fav.png"),
+Image.asset("images/2_dev.png",height: 250,width: 500,
+),
 Text("Free delivery offers",style: TextStyle(
   color: Colors.amber,
   fontSize: 14
