@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_aap/auto/login_screen.dart';
 import '../onbarding/first_screen.dart';
 import '../onbarding/second_screen.dart';
 import '../onbarding/third_screen.dart';
@@ -45,6 +46,7 @@ class _OnboardingState extends State<Onboarding> {
             CustomIndicator(active: index==2),
         ],),
         InkWell(
+         
            child: Container(
             height: 50,
             width: 200,
@@ -58,9 +60,19 @@ class _OnboardingState extends State<Onboarding> {
            ),
            InkWell(
             onTap: () {
-             _controller.animateToPage(index+1, duration: Duration(
+              if(index==2){
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context)=>LoginScreen())
+               
+  
+                
+                );
+              }else{
+               _controller.animateToPage(index+1, duration: Duration(
             milliseconds: 250
           ), curve: Curves.linear); 
+              }
+             
             },
             child:Container(
               height: 50,

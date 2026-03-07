@@ -15,11 +15,13 @@ class _ThirdScreenState extends State<ThirdScreen> {
       children: [
 Image.asset("images/2_dev.png",height: 250,width: 500,
 ),
+SizedBox(height: 10,),
 Text("Free delivery offers",style: TextStyle(
   color: Colors.amber,
   fontSize: 14
 
 ),),
+SizedBox(height: 20,),
 Text("Get all your loved foods in one once place,\n you just place the orer do the rest",textAlign: TextAlign.center
 ,style: TextStyle(
   

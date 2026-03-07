@@ -7,7 +7,7 @@ class VerificationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black, // الجزء العلوي أسود
+      backgroundColor: Colors.blue,
       body: SafeArea(
         bottom: false,
         child: Column(
@@ -66,10 +66,7 @@ class VerificationScreen extends StatelessWidget {
                     Spacer(),
 
                     // --- لوحة المفاتيح المخصصة ---
-                    Container(
-                      padding: EdgeInsets.only(bottom: 20),
-                      child: CustomKeypad(),
-                    ),
+                    
                   ],
                 ),
               ),
@@ -77,36 +74,6 @@ class VerificationScreen extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-}
-
-// كود لوحة المفاتيح المخصصة في الأسفل
-class CustomKeypad extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return GridView.builder(
-      shrinkWrap: true,
-      physics: NeverScrollableScrollPhysics(),
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 3,
-        childAspectRatio: 1.8,
-      ),
-      itemCount: 12,
-      itemBuilder: (context, index) {
-        if (index == 9) return SizedBox(); // فراغ يسار الصفر
-        if (index == 10) return _buildKey('0');
-        if (index == 11) return _buildKey('backspace', isIcon: true);
-        return _buildKey('${index + 1}');
-      },
-    );
-  }
-
-  Widget _buildKey(String label, {bool isIcon = false}) {
-    return Center(
-      child: isIcon 
-        ? Icon(Icons.backspace_outlined, color: Colors.black)
-        : Text(label, style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500)),
     );
   }
 }
