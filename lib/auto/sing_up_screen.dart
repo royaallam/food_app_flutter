@@ -8,7 +8,7 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 6, 37, 84), // الجزء العلوي الداكن
+      backgroundColor: Colors.black, // الجزء العلوي الداكن
       body: Column(
         children: [
           // القسم العلوي (العنوان وزر الرجوع)

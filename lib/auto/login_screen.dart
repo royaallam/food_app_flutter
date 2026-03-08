@@ -9,7 +9,7 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF1E1E1E), // لون الخلفية العلوية الداكنة
+      backgroundColor:  Colors.black, // لون الخلفية العلوية الداكنة
       body: Stack(
         children: [
           // القسم العلوي: العنوان

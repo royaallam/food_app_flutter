@@ -17,7 +17,8 @@ Image.asset("images/3_chef.png",height: 250,width: 500,),
 SizedBox(height: 20,),
 Text("Order from chef",style: TextStyle(
   color: Colors.deepOrange,
-  fontSize: 20
+  fontSize: 20,
+  fontWeight: FontWeight.bold
 
 ),),
 SizedBox(height: 20,),
@@ -26,7 +27,7 @@ Text("Get all your loved foods in one once place,\n you just place the orer do t
   
   color: Colors.deepOrange,
   fontSize: 18,
-  fontWeight: FontWeight.bold
+  
 ),),
       ],
     );

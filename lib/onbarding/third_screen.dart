@@ -18,16 +18,18 @@ Image.asset("images/2_dev.png",height: 250,width: 500,
 SizedBox(height: 10,),
 Text("Free delivery offers",style: TextStyle(
   color: Colors.deepOrange,
-  fontSize: 14
+  fontSize: 20,
+  fontWeight: FontWeight.bold
+
 
 ),),
 SizedBox(height: 20,),
 Text("Get all your loved foods in one once place,\n you just place the orer do the rest",textAlign: TextAlign.center
 ,style: TextStyle(
   
-  color: Colors.amber,
-  fontSize: 20,
-  fontWeight: FontWeight.bold
+  color: Colors.deepOrangeAccent,
+  fontSize: 18,
+  
 ),),
       ],
     );

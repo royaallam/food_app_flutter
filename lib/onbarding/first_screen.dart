@@ -19,7 +19,8 @@ class _FirstScreenState extends State<FirstScreen> {
       SizedBox(height: 20,),
       Text("All your favorites",style: TextStyle(
        color: Colors.deepOrange,
-        fontSize: 20
+        fontSize: 20,
+        fontWeight: FontWeight.bold
 
         ),),
       Container(
@@ -29,7 +30,7 @@ class _FirstScreenState extends State<FirstScreen> {
           
           color: Colors.deepOrange,
           fontSize: 18,
-           fontWeight: FontWeight.bold
+           
              ),),
       ),
       ],
