@@ -3,8 +3,8 @@ import 'package:food_aap/auto/forget_password.dart';
 import 'package:food_aap/auto/sing_up_screen.dart';
 import 'package:food_aap/auto/verification_screen%20.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class LoginScreen extends StatelessWidget {
+  const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

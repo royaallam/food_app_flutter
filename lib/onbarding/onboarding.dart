@@ -64,7 +64,7 @@ class _OnboardingState extends State<Onboarding> {
             onTap: () {
               if(index==2){
                 Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context)=>LoginPage())
+                  MaterialPageRoute(builder: (context)=>LoginScreen())
                
   
                 

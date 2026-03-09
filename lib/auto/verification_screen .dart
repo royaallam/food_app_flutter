@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_aap/auto/widget_contet/location_me.dart';
 
 
 
@@ -105,7 +106,10 @@ class VerificationScreen extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 30),
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context)=>LocationAccessScreen()));
+                        },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.orange[800],
                           minimumSize: Size(double.infinity, 55),
