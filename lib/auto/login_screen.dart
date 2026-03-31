@@ -12,7 +12,7 @@ class LoginScreen extends StatelessWidget {
       backgroundColor:  Colors.black, 
       body: Stack(
         children: [
-          // القسم العلوي: العنوان
+        
           Positioned(
             top: 100,
             left: 0,
@@ -36,7 +36,7 @@ class LoginScreen extends StatelessWidget {
             ),
           ),
 
-          // القسم السفلي: نموذج تسجيل الدخول
+          
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
@@ -138,7 +138,7 @@ class LoginScreen extends StatelessWidget {
     );
   }
 
-  // Widget مساعد للأيقونات الاجتماعية
+
   Widget _socialIcon(IconData icon, Color color) {
     return CircleAvatar(
       radius: 25,

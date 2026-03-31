@@ -4,10 +4,10 @@ class ForgetPassword extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF1A1D21), // لون الخلفية الداكن العلوي
+      backgroundColor: Color(0xFF1A1D21), 
       body: Column(
         children: [
-          // الجزء العلوي (العنوان وزر الرجوع)
+         
           Container(
             padding: EdgeInsets.only(top: 60, left: 20, right: 20, bottom: 40),
             child: Column(
@@ -34,12 +34,12 @@ class ForgetPassword extends StatelessWidget {
             ),
           ),
           
-          // الجزء السفلي (حقل الإدخال والزر)
+          
           Expanded(
             child: Container(
               padding: EdgeInsets.all(30),
               decoration: BoxDecoration(
-                color: Colors.white, // لون الحاوية السفلية
+                color: Colors.white, 
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(30),
                   topRight: Radius.circular(30),
@@ -62,7 +62,7 @@ class ForgetPassword extends StatelessWidget {
                     height: 55,
                     child: ElevatedButton(
                       onPressed: () {
-                        // هنا تضع وظيفة إرسال الكود
+                       
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Color(0xFFFF7A45), // لون الزر البرتقالي

@@ -121,7 +121,7 @@ class VerificationScreen extends StatelessWidget {
 
                     Spacer(),
 
-                    // --- لوحة المفاتيح المخصصة ---
+                   
                     
                   ],
                 ),

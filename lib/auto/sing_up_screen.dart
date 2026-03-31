@@ -8,10 +8,10 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black, // الجزء العلوي الداكن
+      backgroundColor: Colors.black, 
       body: Column(
         children: [
-          // القسم العلوي (العنوان وزر الرجوع)
+          
           Container(
             padding: const EdgeInsets.only(top: 50, left: 20, right: 20, bottom: 30),
             child: Column(
@@ -35,7 +35,7 @@ class SignUpScreen extends StatelessWidget {
             ),
           ),
 
-          // القسم السفلي (البطاقة البيضاء للحقول)
+          
           Expanded(
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 40),
@@ -59,7 +59,7 @@ class SignUpScreen extends StatelessWidget {
                     buildTextField("RE-TYPE PASSWORD", "********", isPassword: true),
                     const SizedBox(height: 40),
                     
-                    // زر التسجيل
+                 
                     SizedBox(
                       width: double.infinity,
                       height: 55,
@@ -91,7 +91,7 @@ class SignUpScreen extends StatelessWidget {
     );
   }
 
-  // ودجت مخصصة لبناء الحقول لتقليل تكرار الكود
+ 
   Widget buildTextField(String label, String hint, {bool isPassword = false}) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
