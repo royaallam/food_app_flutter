@@ -102,7 +102,7 @@ class VerificationScreen extends StatelessWidget {
                     
                     SizedBox(height: 40),
                     
-                    // زر التفعيل (Verify)
+                    
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 30),
                       child: ElevatedButton(
