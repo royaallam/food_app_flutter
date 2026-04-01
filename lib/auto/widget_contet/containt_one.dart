@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_aap/auto/widget_contet/containt_two.dart';
 
 
 
@@ -61,7 +62,19 @@ class ContaintOne extends StatelessWidget {
                 filled: true,
                 fillColor: Colors.grey[100],
                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(15), borderSide: BorderSide.none),
+                
               ),
+              onChanged: (value) => {
+                if(value.isNotEmpty){
+                  Navigator.of(context).push(
+                 MaterialPageRoute<void>(
+      builder: (BuildContext context) => ContaintTwo(),
+    ),
+  )
+
+                  
+                }
+              },
             ),
 
             // --- Categories ---
