@@ -3,11 +3,19 @@ import 'package:food_aap/auto/widget_contet/containt_two.dart';
 
 
 
-class ContaintOne extends StatelessWidget {
+class ContaintOne extends StatefulWidget {
   const ContaintOne({super.key});
+ 
 
   @override
+  State<ContaintOne> createState() => _ContaintOneState();
+}
+
+class _ContaintOneState extends State<ContaintOne> {
+  bool isDark = false;
+  @override
   Widget build(BuildContext context) {
+     
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -55,6 +63,7 @@ class ContaintOne extends StatelessWidget {
 
             // --- Search Bar ---
             const SizedBox(height: 15),
+            /*
             TextField(
               decoration: InputDecoration(
                 hintText: "Search dishes, restaurants",
@@ -64,17 +73,61 @@ class ContaintOne extends StatelessWidget {
                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(15), borderSide: BorderSide.none),
                 
               ),
-              onChanged: (value) => {
-                if(value.isNotEmpty){
-                  Navigator.of(context).push(
-                 MaterialPageRoute<void>(
-      builder: (BuildContext context) => ContaintTwo(),
-    ),
-  )
+              
+            ),
+            */
+            Container(
+              child:SearchAnchor(
+            builder: (BuildContext context, 
+            SearchController controller) {
+              return SearchBar(
+                controller: controller,
+                padding: const WidgetStatePropertyAll<EdgeInsets>(
+                  EdgeInsets.symmetric(horizontal: 16.0),
+                ),
+                onTap: () {
+                  controller.openView();
+                },
+                onChanged: (_) {
+                  controller.openView();
+                },
+                leading: const Icon(Icons.search),
+                trailing: <Widget>[
+                  Tooltip(
+                    message: 'Change brightness mode',
+                    child: IconButton(
+                      isSelected: isDark,
+                      onPressed: () {
+                        setState(() {
+                          isDark = !isDark;
+                        });
+                      },
+                      icon: const Icon(Icons.arrow_back),
+                      selectedIcon: const Icon(Icons.brightness_2_outlined),
+                    ),
+                  ),
+                ],
+              );
+            },
+            suggestionsBuilder:
+                (BuildContext context, SearchController controller) {
+                  return List<ListTile>.generate(3, (int index) {
+                    List wordI=[];
+                     List  item = ["BURGER","HOT","PLAZZA"];
+                  //  for(){}
+                    return ListTile(
+                      title: Text(item[index]),
+                      onTap: () {
+                        setState(() {
+                          
+                          //controller.closeView(item);
 
-                  
-                }
-              },
+                        });
+                      },
+                    );
+                  });
+                },
+          ),
             ),
 
             // --- Categories ---

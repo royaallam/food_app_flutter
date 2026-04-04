@@ -34,8 +34,8 @@ class _SplashScreenState extends State<SplashScreen>
     with SingleTickerProviderStateMixin {
   
   // ani
-  late AnimationController _fanController;
-
+  //late AnimationController _fanController;
+/*
   @override
   void initState() {
     super.initState();
@@ -58,6 +58,7 @@ class _SplashScreenState extends State<SplashScreen>
     _fanController.dispose();
     super.dispose();
   }
+  */
 
   @override
   Widget build(BuildContext context) {
@@ -66,11 +67,22 @@ class _SplashScreenState extends State<SplashScreen>
         fit: StackFit.expand, 
         children: [
           
-          Image.asset(
-            'images/1.png',
-            fit: BoxFit.cover, 
-          ),
+          InkWell(
+            onTap: (){
+              Navigator.of(context).push(
+                MaterialPageRoute<void>(
+      builder: (BuildContext context) => const Onboarding(),
+    ),
+              );
+            },
 
+            child: Image.asset(
+              'images/1.png',
+              fit: BoxFit.cover, 
+            ),
+          ),
+          
+/*
           
           Positioned(
             right: -100, 
@@ -96,6 +108,7 @@ class _SplashScreenState extends State<SplashScreen>
               
             ),
           ),
+          */
         ],
       ),
     );
