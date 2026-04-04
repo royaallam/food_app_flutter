@@ -4,14 +4,14 @@ import 'package:food_aap/auto/widget_contet/res_containt_eginht.dart';
 
 
 
-class  DestalsConSix  extends StatefulWidget {
-  const DestalsConSix ({super.key});
+class  DestalsConNine  extends StatefulWidget {
+  const DestalsConNine ({super.key});
 
   @override
-  State<DestalsConSix> createState() => _DestalsConSixState();
+  State<DestalsConNine> createState() => _DestalsConSixState();
 }
 
-class _DestalsConSixState extends State<DestalsConSix> {
+class _DestalsConSixState extends State<DestalsConNine> {
     int quantity=0;
   @override
   Widget build(BuildContext context) {

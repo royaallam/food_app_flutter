@@ -2,25 +2,7 @@ import 'package:flutter/material.dart';
 
 
 
-class HurryOffersSeven extends StatelessWidget {
-  const HurryOffersSeven({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.grey[300],
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () => showDialog(
-            context: context,
-            builder: (context) => const DiscountDialog(),
-          ),
-          child: const Text("إظهار العرض"),
-        ),
-      ),
-    );
-  }
-}
 
 class DiscountDialog extends StatelessWidget {
   const DiscountDialog({super.key});

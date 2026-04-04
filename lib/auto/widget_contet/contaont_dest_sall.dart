@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:food_aap/auto/widget_contet/containt_recet_search.dart';
+import 'package:food_aap/auto/widget_contet/containt_six.dart';
 
 
 
-class ContaontDestSall extends StatelessWidget {
+class ContaontDestSall extends StatefulWidget {
+  @override
+  State<ContaontDestSall> createState() => _ContaontDestSallState();
+}
+
+class _ContaontDestSallState extends State<ContaontDestSall> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +28,7 @@ class ContaontDestSall extends StatelessWidget {
                 Icon(Icons.arrow_drop_down, color: Colors.black),
               ],
             ),
-          ],
+          ], 
         ),
         actions: [
           Stack(
@@ -81,7 +87,7 @@ class ContaontDestSall extends StatelessWidget {
             SizedBox(height: 25),
 
             // Open Restaurants Header
-            _buildSectionHeader("Open Restaurants"),
+            _buildSectionHeader("Open Restaurants",),
             SizedBox(height: 15),
 
             // Restaurant Card
@@ -98,7 +104,17 @@ class ContaontDestSall extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(title, style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-        Row(children: [Text("See All", style: TextStyle(color: Colors.grey)), Icon(Icons.arrow_forward_ios, size: 12, color: Colors.grey)]),
+        
+        InkWell(
+          onTap: () {
+            Navigator.of(context).push(
+              MaterialPageRoute<void>(
+      builder: (BuildContext context) => ContaintSix(),
+    ),
+  );
+            
+          },
+          child: Row(children: [Text("See All", style: TextStyle(color: Colors.grey)), Icon(Icons.arrow_forward_ios, size: 12, color: Colors.grey)])),
         
       ],
     );
@@ -141,7 +157,7 @@ class ContaontDestSall extends StatelessWidget {
           height: 180,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
-            image: DecorationImage(image: AssetImage("assets/rest.png"), fit: BoxFit.cover),
+            image: DecorationImage(image: AssetImage("images/food_one.jpeg"), fit: BoxFit.cover),
           ),
         ),
         SizedBox(height: 10),

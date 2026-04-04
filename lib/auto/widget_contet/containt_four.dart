@@ -3,7 +3,21 @@ import 'package:food_aap/cart/cart.dart';
 
 
 
-class ContaintFour extends StatelessWidget {
+class ContaintFour extends StatefulWidget {
+  @override
+  State<ContaintFour> createState() => _ContaintFourState();
+}
+
+class _ContaintFourState extends State<ContaintFour> {
+  var _counter=0;
+
+  void _increment()=>setState(() {
+    _counter++;
+  });
+  void _decrement()=> setState(() {
+    _counter--;
+  });
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -127,22 +141,32 @@ class ContaintFour extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                     child: Row(
                       children: [
-                        IconButton(onPressed: () {}, icon: const Icon(Icons.remove, color: Colors.white)),
-                        const Text("2", style: TextStyle(color: Colors.white, fontSize: 18)),
-                        IconButton(onPressed: () {}, icon: const Icon(Icons.add, color: Colors.white)),
+                        IconButton(onPressed: () {
+                          _decrement();
+                        }, icon: const Icon(Icons.remove, color: Colors.white)),
+                        Text("$_counter", style: const TextStyle(color: Colors.white, fontSize: 18)),
+                        IconButton(onPressed: () {
+                          _increment();
+                        }, icon: const Icon(Icons.add, color: Colors.white)),
                       ],
                     ),
                   )
                 ],
               ),
             ),
-            ElevatedButton(onPressed: (){
-              Navigator.of(context).push(
-                 MaterialPageRoute<void>(
-      builder: (BuildContext context) => Cart(),
-    ),
-  );
-            }, child: Text("p"))
+            Center(
+              child: ElevatedButton(
+                style:ElevatedButton.styleFrom(
+                  backgroundColor: Colors.orange
+                ),
+                onPressed: (){
+                Navigator.of(context).push(
+                   MaterialPageRoute<void>(
+                    builder: (BuildContext context) => Cart(),
+                  ),
+                );
+              }, child: Text("add",style: TextStyle(color: Colors.white),),),
+            )
           ],
         ),
       ),

@@ -1,10 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:food_aap/auto/widget_contet/hurry_offers_seven.dart';
+import 'package:food_aap/auto/widget_contet/res_containt_eginht.dart';
 
 
 
-class ContaintSix extends StatelessWidget {
+class ContaintSix extends StatefulWidget {
   const ContaintSix({super.key});
 
+  @override
+  State<ContaintSix> createState() => _ContaintSixState();
+}
+
+
+class _ContaintSixState extends State<ContaintSix> {
+  @override
+void initState() {
+  super.initState();
+
+  WidgetsBinding.instance.addPostFrameCallback((_) {
+    showDialog(
+      context: context,
+      barrierDismissible: false, // ما يتقفل إلا بزر
+      builder: (context) => const DiscountDialog(),
+    );
+  });
+}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -94,9 +114,9 @@ class ContaintSix extends StatelessWidget {
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: [
-                    _buildCategoryItem("Pizza", "assets/pizza.png"), // استبدل بمسار الصورة لديك
-                    _buildCategoryItem("Burger", "assets/burger.png"),
-                    _buildCategoryItem("Pizza", "assets/sandwich.png"),
+                    _buildCategoryItem("Pizza", "images/pazza.png"), // استبدل بمسار الصورة لديك
+                    _buildCategoryItem("Burger", "images/buger.jpeg"),
+                   // _buildCategoryItem("Pizza", "assets/sandwich.png"),
                   ],
                 ),
               ),
@@ -106,7 +126,13 @@ class ContaintSix extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const Text("Open Restaurants", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
-                  TextButton(onPressed: () {}, child: const Text("See All >", style: TextStyle(color: Colors.grey))),
+                  TextButton(onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute<void>(
+      builder: (BuildContext context) => ResContaintEginht(),
+    ),
+                    );
+                  }, child: const Text("See All >", style: TextStyle(color: Colors.grey))),
                 ],
               ),
               const SizedBox(height: 10),
@@ -127,7 +153,7 @@ class ContaintSix extends StatelessWidget {
           CircleAvatar(
             radius: 35,
             backgroundColor: Colors.transparent,
-            child: Image.network("https://via.placeholder.com/100"), // تجريبي: استبدله بـ Image.asset
+          child: Image.asset(imagePath), // تجريبي: استبدله بـ Image.asset
           ),
           const SizedBox(height: 8),
           Text(title, style: const TextStyle(fontWeight: FontWeight.bold)),
@@ -146,7 +172,7 @@ class ContaintSix extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
             image: const DecorationImage(
-              image: NetworkImage("https://via.placeholder.com/400x200"), // تجريبي
+              image: AssetImage("images/food_one.jpeg"), // تجريبي
               fit: BoxFit.cover,
             ),
           ),

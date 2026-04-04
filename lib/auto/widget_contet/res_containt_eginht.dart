@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:food_aap/auto/widget_contet/containt_six.dart';
+import 'package:food_aap/auto/widget_contet/destals_con_nine.dart';
 import 'package:food_aap/auto/widget_contet/hurry_offers_seven.dart';
 
 
@@ -13,12 +15,18 @@ class ResContaintEginht extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        leading: const Icon(Icons.arrow_back_ios_new, color: Colors.black, size: 20),
+        leading: InkWell(
+          onTap: () {
+            Navigator.of(context).pop(ContaintSix());
+          },
+          child: const Icon(Icons.arrow_back_ios_new, color: Colors.black, size: 20)),
         title: const Text("Restaurant View", style: TextStyle(color: Colors.black, fontSize: 18)),
         centerTitle: true,
         actions: [
           IconButton(onPressed: () {
-            Navigator.of(context).pop(HurryOffersSeven());
+            Navigator.of(context).push(MaterialPageRoute<void>(
+      builder: (BuildContext context) => const DestalsConNine(),
+    ),);
           }, icon: const Icon(Icons.more_horiz, color: Colors.black)),
         ],
       ),
