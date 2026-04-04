@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_aap/auto/widget_contet/containt_four.dart';
 import 'package:food_aap/auto/widget_contet/contaont_dest_sall.dart';
 
 
@@ -103,7 +104,38 @@ class  ContaintThree    extends StatelessWidget {
                   ],
                 ),
               ),
-              Text("SAKLKAASJKSJA")
+              SizedBox(height: 15,),
+              Text("Popular Fast food",style: TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.bold),),
+              Row(
+                children: [
+                  Container(
+                    child: Column(
+                      children: [
+                        Image.asset("images/pazza.png",height: 100,),
+                        Text("European Pizza",style: TextStyle(color: Colors.black),),
+                        Text("Uttara Coffe House",style: TextStyle(color: Colors.grey),)
+                      ],
+                    ),
+                  ),
+                   InkWell(
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute<void>(
+      builder: (BuildContext context) =>  ContaintFour(),
+    ),);
+                    },
+                     child: Container(
+                      child: Column(
+                        children: [
+                          Image.asset("images/pazz_margtra.jpg",height: 100,),
+                          Text("Buffala Pizza",style: TextStyle(color: Colors.black),),
+                          Text("Cafenio Coffee Club",style: TextStyle(color: Colors.grey),)
+                        ],
+                      ),
+                                       ),
+                   ),
+                ],
+              ),
+            
             ],
           ),
         ),
