@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_aap/auto/widget_contet/contaont_dest_sall.dart';
 
 
 
@@ -18,7 +19,11 @@ class  ContaintThree    extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  _buildRoundButton(Icons.arrow_back_ios_new, Colors.black12,),
+                  InkWell(
+                    onTap: () {
+                      Navigator.of(context).pop(ContaontDestSall());
+                    },
+                    child: _buildRoundButton(Icons.arrow_back_ios_new, Colors.black12,)),
                   Row(
                     children: const [
                       Text("BURGER", style: TextStyle(fontWeight: FontWeight.bold, letterSpacing: 1.2)),
@@ -98,6 +103,7 @@ class  ContaintThree    extends StatelessWidget {
                   ],
                 ),
               ),
+              Text("SAKLKAASJKSJA")
             ],
           ),
         ),
@@ -119,7 +125,7 @@ class  ContaintThree    extends StatelessWidget {
         children: [
           Expanded(
             child: Center(
-              child: Icon(Icons.fastfood, size: 60, color: Colors.orange.shade300), // استبدلها بـ Image.asset
+              child: Image.asset("images/buger.jpeg"),
             ),
           ),
           Text(name, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
