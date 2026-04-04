@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_aap/auto/widget_contet/containt_two.dart';
+import 'package:food_aap/auto/widget_contet/contaont_dest_sall.dart';
 
 
 
@@ -111,21 +112,23 @@ class _ContaintOneState extends State<ContaintOne> {
             },
             suggestionsBuilder:
                 (BuildContext context, SearchController controller) {
-                  return List<ListTile>.generate(3, (int index) {
-                    List wordI=[];
-                     List  item = ["BURGER","HOT","PLAZZA"];
-                  //  for(){}
-                    return ListTile(
-                      title: Text(item[index]),
-                      onTap: () {
-                        setState(() {
-                          
-                          //controller.closeView(item);
+                  List<String> items = ["BURGER", "PIZZA", "HOT DOG"];
 
-                        });
-                      },
-                    );
-                  });
+  // فلترة حسب النص المكتوب
+  List<String> filteredItems = items.where((item) {
+    return item.toLowerCase().contains(controller.text.toLowerCase());
+  }).toList();
+
+  return filteredItems.map((item) {
+    return ListTile(
+      title: Text(item),
+      onTap: () {
+        controller.closeView(item); // يحط الكلمة في البحث
+      },
+    );
+  }).toList();
+
+
                 },
           ),
             ),
@@ -163,7 +166,15 @@ class _ContaintOneState extends State<ContaintOne> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(title, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-        const Text("See All >", style: TextStyle(color: Colors.grey)),
+        InkWell(
+          onTap: (){
+            Navigator.of(context).push(
+              MaterialPageRoute<void>(
+      builder: (BuildContext context) => ContaontDestSall(),
+    ),
+            );
+          },
+          child: const Text("See All >", style: TextStyle(color: Colors.grey))),
       ],
     );
   }

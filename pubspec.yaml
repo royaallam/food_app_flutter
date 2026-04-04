@@ -67,6 +67,8 @@ flutter:
   - images/fan_blades.jpeg
   - images/food_one.jpeg
   - images/hot_dog.png
+  - images/pazza.png
+  - images/buger.jpeg
      
 
   # An image asset can refer to one or more resolution-specific "variants", see
